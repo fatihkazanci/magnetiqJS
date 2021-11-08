@@ -1,3 +1,11 @@
+/*
+*	MagnetiqJS
+*	Updated On: 08/11/2021
+*	By Fatih KAZANCI
+*   Licenced By GNU General Public License v3.0
+*   https://github.com/fatihkazanci/magnetiqJS/blob/main/LICENSE
+*/
+
 var magnetiq = function () {
   // Attributes
   var eventAttributes = {
