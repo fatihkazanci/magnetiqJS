@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagnetiqJS</title>
+</head>
+<body>
+    <h1>{{ welcomeDescription }}</h1>
+    <h6>Clock: {{ clock.hour }} : {{ clock.minute }} : {{ clock.second }}</h6>
+
+    <button onclick="counterFunction()" id="counter">Click Me</button>
+    <b>This is counter: {{ counter }}</b>
+
+
+    <h3>{{ nationText }}</h3>
+    <div mq-for="nation in nations">
+        <i>{{ nation }}</b> <br>
+    </div>
+
+    <h3>Persons</h3>
+    <ul>
+        <li mq-for="person in persons">
+            <div>{{ person.name }}</div>
+            <div>
+                <div><b>Hobbies:</b></div>
+                <span mq-for="hobby in person.hobbies">
+                    <i>{{ hobby }}</i> 
+                </span>
+            </div>
+        </li>
+    </ul>
+
+    <script src="mq.min.js"></script>
+    <script>
+        var welcome = "Welcome to MagnetiqJS";
+
+        var mq = new magnetiq();
+        mq.$var.welcomeDescription = welcome;
+        mq.$var.counter = 0;
+        mq.$var.clock = {
+            hour:"12",
+            minute:"01",
+            second:"20"
+        }
+
+        function counterFunction() {
+            mq.$var.counter++;
+        }
+
+        mq.$var.nationText = "Nations";
+        mq.$var.nations = ["Turkey","England","USA","Germany","France"];
+
+        mq.$var.persons = [
+            {
+                name:"Fatih",
+                hobbies: ["PC","Football"]
+            },
+            {
+                name:"Caner",
+                hobbies: ["PC","Volleyball"]
+            },
+            {
+                name:"Ahmet",
+                hobbies: ["PC","Car"]
+            }
+        ]
+    </script>
+</body>
+</html>
