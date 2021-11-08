@@ -15,7 +15,7 @@
 
 
     <h3>{{ nationText }}</h3>
-    <div mq-for="nation in nations">
+    <div mq-for="nation in nations" mq-sort="nation:desc">
         <i>{{ nation }}</b> <br>
     </div>
 
@@ -31,6 +31,11 @@
             </div>
         </li>
     </ul>
+
+    <div mq-if="5 > 4">
+        "Ne söylediğini unutabilirler, ama onlara nasıl hissettirdiğini asla unutmayacaklar." <br>
+        <b>Carl W. Buechner</b>
+    </div>
 
     <script src="mq.min.js"></script>
     <script>
